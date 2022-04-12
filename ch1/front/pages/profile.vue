@@ -26,6 +26,11 @@
                     type:= "nickname"
                     required
                 />
+                <v-text-field
+                    label= "닉네임"
+                    type:= "nickname"
+                    required
+                />
             </v-form>
         </v-card>
       </v-container>
