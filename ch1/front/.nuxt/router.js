@@ -4,6 +4,10 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
+const _18e6cf17 = () => interopDefault(import('../pages/profile.vue' /* webpackChunkName: "pages/profile" */))
+const _1bc3059a = () => interopDefault(import('../pages/signup.vue' /* webpackChunkName: "pages/signup" */))
+const _6e958f40 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
+
 const emptyFn = () => {}
 
 Vue.use(Router)
@@ -15,7 +19,19 @@ export const routerOptions = {
   linkExactActiveClass: 'nuxt-link-exact-active',
   scrollBehavior,
 
-  routes: [],
+  routes: [{
+    path: "/profile",
+    component: _18e6cf17,
+    name: "profile"
+  }, {
+    path: "/signup",
+    component: _1bc3059a,
+    name: "signup"
+  }, {
+    path: "/",
+    component: _6e958f40,
+    name: "index"
+  }],
 
   fallback: false
 }

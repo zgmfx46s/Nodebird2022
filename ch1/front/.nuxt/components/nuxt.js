@@ -5,6 +5,9 @@ import NuxtError from './nuxt-error.vue'
 
 import NuxtChild from './nuxt-child'
 
+import '@mdi/font/css/materialdesignicons.css'
+import 'material-design-icons-iconfont/dist/material-design-icons.css'
+
 export default {
   name: 'Nuxt',
   components: {
