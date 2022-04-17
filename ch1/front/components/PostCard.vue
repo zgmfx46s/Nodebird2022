@@ -9,7 +9,7 @@
       </v-card-text>
       <v-card-actions>
           <v-btn text color="orange">
-              <v-icon>mdi-twitter-retweet</v-icon>
+              <v-icon>mdi-repeat-variant</v-icon>
           </v-btn>
           <v-btn text color="orange">
               <v-icon>mdi-heart-outline</v-icon>
