@@ -11,5 +11,9 @@
         "plugin:vue/recommended"
     ],
     "plugins": [],
-    "rules": {}
+    "rules": {
+      "vue/multi-word-component-names": ["error", {
+        "ignores": ["default", "admin", "signup", "index", "profile"]
+   }]
+    }
 }

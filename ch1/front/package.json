@@ -15,7 +15,7 @@
     },
     "scripts": {
         "dev": "nuxt",
-        "lint": "eslint **/*"
+        "lint": "eslint '**/*'"
     },
     "author": "",
     "license": "ISC"
