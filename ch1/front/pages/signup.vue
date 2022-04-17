@@ -4,29 +4,39 @@
           <v-card>
               <v-container>
                 <v-subheader>회원가입</v-subheader>
-                <v-form>
+                <v-form ref= "form" v-model="valid" @submit.prevent="onSubmitForm">
                     <v-text-field
-                        label= "이메일"
-                        type:= "email"
+                        v-model="email"
+                        label="이메일"
+                        type="email"
+                        :rules="emailRules"
                         required
                     />
                     <v-text-field
-                        label= "비밀번호"
-                        type:= "password"
+                        v-model="password"
+                        label="비밀번호"
+                        type="password"
+                        :rules="passwordRules"
                         required
                     />
                     <v-text-field
-                        label= "비밀번호확인"
-                        type:= "password"
+                        v-model="passwordCheck"
+                        :rules="passwordCheckRules"
+                        label="비밀번호확인"
+                        type="password"
                         required
                     />
                     <v-text-field
-                        label= "닉네임"
-                        type:= "nickname"
+                        v-model="nickname"
+                        label="닉네임"
+                        type="nickname"
+                        :rules="nicknameRules"
                         required
                     />
                     <v-checkbox
+                        v-model="terms"
                         required
+                        :rules="[v  => !!v || '약관에 동의해야 합니다.']"
                         label="우호우호"
                     />
                     <v-btn color="green" type="submit">가입하기</v-btn>
@@ -41,7 +51,32 @@
 export default {
     data() {
         return {
-            name: 'Nuxt.js',
+            valid: false,
+            email: '',
+            password: '',
+            passwordCheck: '',
+            nickname: '',
+            terms: false,
+            emailRules: [
+                v => !!v || '이메일은 필수입니다.',
+                v => /.+@./.test(v) || '이메일이 유효하지 않습니다.',
+            ],
+            nicknameRules: [
+                v  => !!v || '닉네임은 필수입니다.',
+            ],
+            passwordRules: [
+                v  => !!v || '비밀번호는 필수입니다.',
+            ],
+            passwordCheckRules: [
+                v => !!v || '비밀번호 확인은 필수입니다.',
+                v => v === this.password || '비밀번호가 일치하지 않습니다.',
+            ],
+        }
+    },
+    methods: {
+        onSubmitForm(){
+            this.$refs.form.validate();
+            console.log(this.valid);
         }
     },
     head() {
