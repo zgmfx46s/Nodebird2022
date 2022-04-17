@@ -3,6 +3,8 @@ import Vuetify from 'vuetify'
 
 import options from './options'
 
+import '@mdi/font/css/materialdesignicons.css'
+
 Vue.use(Vuetify, {
 })
 
