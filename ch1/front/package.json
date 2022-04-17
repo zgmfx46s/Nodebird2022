@@ -9,10 +9,13 @@
         "vue": " ^2.6.10"
     },
     "devDependencies": {
-        "@nuxtjs/vuetify": "^1.12.3"
+        "@nuxtjs/vuetify": "^1.12.3",
+        "eslint": "^8.13.0",
+        "eslint-plugin-vue": "^8.6.0"
     },
     "scripts": {
-        "dev": "nuxt"
+        "dev": "nuxt",
+        "lint": "eslint '**/*'"
     },
     "author": "",
     "license": "ISC"

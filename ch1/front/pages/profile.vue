@@ -4,37 +4,36 @@
         <v-card style="margin-bottom: 20px">
             <v-container>
                 <v-subheader>내 프로필</v-subheader>
-                <v-subheader>내 프로필 mihyun</v-subheader>
+                <v-form>
+                    <v-text-field
+                        label="닉네임"
+                        type="nickname"
+                        required
+                    />
+                    <v-btn color="blue" type="submit">수정</v-btn>
+                </v-form>
             </v-container>
-            <v-form>
-                <v-text-field
-                    label= "이메일"
-                    type:= "email"
-                    required
-                />
-                <v-text-field
-                    label= "비밀번호"
-                    type:= "password"
-                    required
-                />
-                <v-text-field
-                    label= "비밀번호확인"
-                    type:= "password"
-                    required
-                />
-                <v-text-field
-                    label= "닉네임"
-                    type:= "nickname"
-                    required
-                />
-            </v-form>
+        </v-card>
+        <v-card style="margin-bottom: 20px">
+            <v-container>
+                <v-subheader>팔로잉</v-subheader>
+                <follow-list />
+            </v-container>
+        </v-card>
+        <v-card style="margin-bottom: 20px">
+            <v-container>
+                <v-subheader>팔로워</v-subheader>
+                <follow-list />
+            </v-container>
         </v-card>
       </v-container>
   </div>
 </template>
 
 <script>
+import FollowList from '../components/FollowList.vue'
 export default {
+  components: { FollowList },
     data() {
         return {
             name: 'nuxt.js',
